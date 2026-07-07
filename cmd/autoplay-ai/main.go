@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/devvraht/Autoplay-AI/internal/capture"
+	"github.com/devvraht/Autoplay-AI/internal/vision"
 )
 
 func main() {
@@ -15,10 +16,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = capture.SaveImage(img, "screenshot.png")
+	game := vision.CropGameArea(img)
+
+	err = capture.SaveImage(game, "game.png")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Screenshot saved successfully!")
+	fmt.Println("Game image saved.")
 }
