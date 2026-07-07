@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/devvraht/autoplay-ai/internal/capture"
+	"github.com/devvraht/Autoplay-AI/internal/capture"
 )
 
 func main() {
