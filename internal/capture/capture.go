@@ -6,9 +6,10 @@ import (
 	"os"
 
 	"github.com/kbinani/screenshot"
+	
 )
 
-func captureScreen() (image.Image, error) {
+func CaptureScreen() (image.Image, error) {
 	bounds := screenshot.GetDisplayBounds(0)
 	img, err := screenshot.CaptureRect(bounds)	
 	if err != nil {
@@ -17,7 +18,7 @@ func captureScreen() (image.Image, error) {
 		return img, nil
 }
 
-func saveImage(img image.Image, filename string) error {
+func SaveImage(img image.Image, filename string) error {
 	file, err := os.Create(filename)
 	if err != nil {
 		return err
